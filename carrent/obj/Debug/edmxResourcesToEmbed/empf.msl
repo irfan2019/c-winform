@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="car_rental_dbModelStoreContainer" CdmEntityContainer="car_rental_dbEntities">
+    <EntitySetMapping Name="tab1">
+      <EntityTypeMapping TypeName="car_rental_dbModel.tab1">
+        <MappingFragment StoreEntitySet="tab1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tab2">
+      <EntityTypeMapping TypeName="car_rental_dbModel.tab2">
+        <MappingFragment StoreEntitySet="tab2">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dateofrented" ColumnName="dateofrented" />
+          <ScalarProperty Name="typeofcar" ColumnName="typeofcar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

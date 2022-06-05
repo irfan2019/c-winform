@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="car_rental_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tab1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tab2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="dateofrented" Type="date" />
+          <Property Name="typeofcar" Type="int" />
+        </EntityType>
+        <Association Name="FK_tab2_tab1">
+          <End Role="tab1" Type="Self.tab1" Multiplicity="0..1" />
+          <End Role="tab2" Type="Self.tab2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tab1">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tab2">
+              <PropertyRef Name="typeofcar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="car_rental_dbModelStoreContainer">
+          <EntitySet Name="tab1" EntityType="Self.tab1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tab2" EntityType="Self.tab2" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tab2_tab1" Association="Self.FK_tab2_tab1">
+            <End Role="tab1" EntitySet="tab1" />
+            <End Role="tab2" EntitySet="tab2" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="car_rental_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tab1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tab2" Relationship="Self.FK_tab2_tab1" FromRole="tab1" ToRole="tab2" />
+        </EntityType>
+        <EntityType Name="tab2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dateofrented" Type="DateTime" Precision="0" />
+          <Property Name="typeofcar" Type="Int32" />
+          <NavigationProperty Name="tab1" Relationship="Self.FK_tab2_tab1" FromRole="tab2" ToRole="tab1" />
+        </EntityType>
+        <Association Name="FK_tab2_tab1">
+          <End Role="tab1" Type="Self.tab1" Multiplicity="0..1" />
+          <End Role="tab2" Type="Self.tab2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tab1">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tab2">
+              <PropertyRef Name="typeofcar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="car_rental_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tab1" EntityType="Self.tab1" />
+          <EntitySet Name="tab2" EntityType="Self.tab2" />
+          <AssociationSet Name="FK_tab2_tab1" Association="Self.FK_tab2_tab1">
+            <End Role="tab1" EntitySet="tab1" />
+            <End Role="tab2" EntitySet="tab2" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="car_rental_dbModelStoreContainer" CdmEntityContainer="car_rental_dbEntities">
+          <EntitySetMapping Name="tab1">
+            <EntityTypeMapping TypeName="car_rental_dbModel.tab1">
+              <MappingFragment StoreEntitySet="tab1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tab2">
+            <EntityTypeMapping TypeName="car_rental_dbModel.tab2">
+              <MappingFragment StoreEntitySet="tab2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="dateofrented" ColumnName="dateofrented" />
+                <ScalarProperty Name="typeofcar" ColumnName="typeofcar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
