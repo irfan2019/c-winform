@@ -16,5 +16,15 @@ namespace carrent
         {
             InitializeComponent();
         }
+
+        private void tbusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

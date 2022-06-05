@@ -96,11 +96,6 @@ namespace carrent
             // cardrop
             // 
             this.cardrop.FormattingEnabled = true;
-            this.cardrop.Items.AddRange(new object[] {
-            "honda",
-            "toyo",
-            "hyun",
-            "volks"});
             this.cardrop.Location = new System.Drawing.Point(25, 208);
             this.cardrop.Name = "cardrop";
             this.cardrop.Size = new System.Drawing.Size(121, 21);
@@ -130,6 +125,7 @@ namespace carrent
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
