@@ -1,0 +1,10 @@
+C:\Users\mindc1may43\source\repos\carrent\carrent\bin\Debug\carrent.exe.config
+C:\Users\mindc1may43\source\repos\carrent\carrent\bin\Debug\carrent.exe
+C:\Users\mindc1may43\source\repos\carrent\carrent\bin\Debug\carrent.pdb
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.csproj.AssemblyReference.cache
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.Form1.resources
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.Properties.Resources.resources
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.csproj.GenerateResource.cache
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.csproj.CoreCompileInputs.cache
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.exe
+C:\Users\mindc1may43\source\repos\carrent\carrent\obj\Debug\carrent.pdb
